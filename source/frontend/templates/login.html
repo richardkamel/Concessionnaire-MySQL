@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Employé</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Connexion Employé</h2>
+
+        <form id="login-form">
+            <label for="email">Courriel :</label>
+            <input type="email" name="email" id="email" required placeholder="exemple@courriel.com"><br>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" id="password" required placeholder="••••••••"><br>
+
+            <button type="submit">Connexion</button>
+        </form>
+
+        <!-- Message d'erreur ou de succès -->
+        <div id="message" class="message-output"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+</html>

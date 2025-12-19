@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Véhicules</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 250px;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vehicules.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Véhicules disponibles</h1>
+            <form method="get" action="{{ url_for('vehicules') }}">
+                <input type="text" name="filtre" placeholder="Rechercher par marque ou modèle...">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                    <th>Année</th>
+                    <th>Kilométrage</th>
+                    <th>Prix</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for v in vehicules %}
+                <tr>
+                    <td>{{ v.marque }}</td>
+                    <td>{{ v.modele }}</td>
+                    <td>{{ v.annee }}</td>
+                    <td>{{ v.kilometrage }}</td>
+                    <td>{{ v.prix }}</td>
+                    <td>{{ v.statut }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

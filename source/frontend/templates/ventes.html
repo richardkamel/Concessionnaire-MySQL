@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique des ventes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script src="{{ url_for('static', filename='js/ventes.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+    <h1>Historique des ventes</h1>
+
+    {% if ventes %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marque</th>
+                <th>Modèle</th>
+                <th>Client</th>
+                <th>Employé</th>
+                <th>Date</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for v in ventes %}
+            <tr>
+                <td>{{ v.idVente }}</td>
+                <td>{{ v.marque }}</td>
+                <td>{{ v.modele }}</td>
+                <td>{{ v.nomClient }}</td>
+                <td>{{ v.nomEmploye }}</td>
+                <td>{{ v.dateVente }}</td>
+                <td>{{ v.prixVente }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p style="text-align:center;">Aucune vente trouvée.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Tableau de bord</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="/vehicules">Véhicules</a></li>
+                <li><a href="/clients">Clients</a></li>
+                <li><a href="/ventes">Ventes</a></li>
+                <li><a href="/entretiens">Entretiens</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
