@@ -52,50 +52,6 @@ Frontend (HTML / CSS / JavaScript)
 
 ---
 
-## Project Structure
-
-Concessionnaire-MySQL-main/
-│
-├── source/
-│   ├── backend/
-│   │   ├── serveur.py
-│   │   ├── password_utils.py
-│   │   └── tuples.py
-│   │
-│   ├── database/
-│   │   ├── creation_BD.sql
-│   │   ├── 001-clients.sql
-│   │   ├── 002-vehicules.sql
-│   │   ├── 003-ventes.sql
-│   │   ├── 004-entretiens.sql
-│   │   └── 005-utilisateurs.sql
-│   │
-│   └── frontend/
-│       ├── templates/
-│       │   ├── login.html
-│       │   ├── dashboard.html
-│       │   ├── clients.html
-│       │   ├── vehicules.html
-│       │   ├── ventes.html
-│       │   └── entretiens.html
-│       │
-│       └── static/
-│           ├── styles.css
-│           └── js/
-│               ├── app.js
-│               ├── login.js
-│               ├── clients.js
-│               ├── vehicules.js
-│               ├── ventes.js
-│               └── entretiens.js
-│
-├── creation_BD.sql
-├── Rapport.pdf
-├── Video_demo.txt
-└── README.md
-
----
-
 ## Database
 
 The database is implemented using MySQL and initialized via SQL scripts.
@@ -149,3 +105,4 @@ Each functional module (clients, vehicles, sales, maintenance) has its own dedic
 4. Run the Flask server
 
 Example:
+
