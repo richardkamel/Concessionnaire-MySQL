@@ -1,11 +1,151 @@
-# GLO-2005
+# Concessionnaire Automobile – Flask & MySQL
 
-Après avoir exécuter les fichiers creation_BD.sql et tuples.py :
+Web application developed to manage the operations of a car dealership using a relational database.  
+The project implements a complete backend with Flask and MySQL, along with a frontend interface for managing clients, vehicles, sales, and maintenance records.
 
-1- Run le serveur.py
+This project was developed as part of an academic software/database course and follows a full-stack architecture.
 
-2- Coller 127.0.0.1/login sur le navigateur.
+---
 
-3- Connexion avec un identifiant généré par tuples.py
+## Project Overview
 
+The application allows dealership employees to:
+- Manage clients
+- Manage vehicles
+- Record vehicle sales
+- Track vehicle maintenance
+- Authenticate users securely
 
+The backend is implemented using Flask and communicates with a MySQL database.
+The frontend uses HTML templates, CSS, and JavaScript to interact with the backend API.
+
+---
+
+## Architecture
+
+Frontend (HTML / CSS / JavaScript)  
+→ Flask Backend (Python)  
+→ MySQL Database  
+
+---
+
+## Main Features
+
+- User authentication with password hashing
+- CRUD operations on clients
+- CRUD operations on vehicles
+- Sales management (linking clients and vehicles)
+- Maintenance tracking
+- Structured SQL database schema
+- Separation between backend, database, and frontend layers
+
+---
+
+## Tech Stack
+
+- Backend: Python (Flask)
+- Database: MySQL
+- Frontend: HTML, CSS, JavaScript
+- Authentication: Password hashing utilities
+- Database scripting: SQL
+- Architecture: MVC-inspired structure
+
+---
+
+## Project Structure
+
+Concessionnaire-MySQL-main/
+│
+├── source/
+│   ├── backend/
+│   │   ├── serveur.py
+│   │   ├── password_utils.py
+│   │   └── tuples.py
+│   │
+│   ├── database/
+│   │   ├── creation_BD.sql
+│   │   ├── 001-clients.sql
+│   │   ├── 002-vehicules.sql
+│   │   ├── 003-ventes.sql
+│   │   ├── 004-entretiens.sql
+│   │   └── 005-utilisateurs.sql
+│   │
+│   └── frontend/
+│       ├── templates/
+│       │   ├── login.html
+│       │   ├── dashboard.html
+│       │   ├── clients.html
+│       │   ├── vehicules.html
+│       │   ├── ventes.html
+│       │   └── entretiens.html
+│       │
+│       └── static/
+│           ├── styles.css
+│           └── js/
+│               ├── app.js
+│               ├── login.js
+│               ├── clients.js
+│               ├── vehicules.js
+│               ├── ventes.js
+│               └── entretiens.js
+│
+├── creation_BD.sql
+├── Rapport.pdf
+├── Video_demo.txt
+└── README.md
+
+---
+
+## Database
+
+The database is implemented using MySQL and initialized via SQL scripts.
+
+Tables include:
+- Clients
+- Vehicles
+- Sales
+- Maintenance records
+- Users (authentication)
+
+The schema enforces relational integrity through primary and foreign keys.
+
+---
+
+## Backend
+
+The backend is built using Flask and provides:
+- Routing logic
+- Database queries
+- Business logic
+- User authentication handling
+
+Password security is implemented using hashing utilities.
+
+---
+
+## Frontend
+
+The frontend uses:
+- HTML templates rendered by Flask
+- JavaScript for dynamic interactions
+- CSS for styling
+
+Each functional module (clients, vehicles, sales, maintenance) has its own dedicated JavaScript file.
+
+---
+
+## How to Run the Project
+
+### Prerequisites
+- Python 3.x
+- MySQL Server
+- pip (Python package manager)
+
+### Steps
+
+1. Create the MySQL database using the provided SQL scripts
+2. Configure database connection parameters in the backend
+3. Install Python dependencies
+4. Run the Flask server
+
+Example:
