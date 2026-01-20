@@ -103,6 +103,3 @@ Each functional module (clients, vehicles, sales, maintenance) has its own dedic
 2. Configure database connection parameters in the backend
 3. Install Python dependencies
 4. Run the Flask server
-
-Example:
-
